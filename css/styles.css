@@ -5,9 +5,7 @@
 .navbar-collapse {
   margin-left: 40%;
 }
-.displays {
-  width: 50%;
-}
+
 #about {
   display: flex;
   flex-wrap: wrap;
@@ -16,13 +14,37 @@
 .intro {
   text-align: center;
 }
-.display img {
+.flip-card img {
   height: 45vh;
 }
 .intro input {
   margin-top: 35px;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  width: 50%;
+}
+.flip-card-inner {
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
 }
 h5.card-title{
   text-align: center;
@@ -32,7 +54,7 @@ h5.card-title{
   margin-left: 20%;
 }
 .controls-top  {
-  padding-top: 40px;
+  margin-top: 100px;
   text-align: center;
 }
 .col-md-4 {
