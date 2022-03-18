@@ -40,7 +40,7 @@
           ALL AT AN AFFORDABLE PRICE. <br>
           Place an order now to start your experience
         </p>
-        <input type="button" value="ORDER NOW" class="btn btn bg-danger" id="#order">
+        <input type="button" value="ORDER NOW" class="btn btn bg-danger" href="#order">
       </div>
       <div class="flip-card">
         <div class="flip-card-inner">
@@ -138,6 +138,49 @@
         </div>  
       </div>
     </div>
+    <div id="order-now" class="order-overlay">
+      <h4>ORDER AND CHECKOUT</h4>
+      <p>Choose the type of pizza and checkout to see your bill.</p>
+        <div class="row">
+          <div class="col-sm-5">
+            <form action="">
+              <label for="flavor">Pizza Flavor</label><br>
+                <select class="form-select" aria-label="Default select example" id="flavor">
+                  <option value="Pepperoni">Pepperoni Pizza</option>
+                  <option value="Vegetable">Vegetable Pizza</option>
+                  <option value="BBQ">BBQ Chicken Pizza</option>
+                  <option value="Margherita">Margherita Pizza</option>
+                  <option value="Haiwaian">Haiwaian Pizza</option>
+                  <option value="Buffalo">Buffalo Pizza</option>
+                  <option value="Meat">Meat Pizza</option>
+                  <option value="Cheese">Cheese Pizza</option>
+                  </select><br>
+              <label for="flavor">Select Pizza Size</label><br>
+                <select class="form-select" aria-label="Default select example" id="size">
+                  <option>Please select size</option>
+                  <option value="larger">Large @ Ksh 1100</option>
+                  <option value="medium">Medium @ Ksh 850</option>
+                  <option value="small">Small @ Ksh 450</option>
+                </select><br>
+              <label for="flavor">Select Crust</label><br>
+                <select class="form-select" aria-label="Default select example" id="crust">
+                  <option>Please select crust</option>
+                  <option value="crispy">Crispy @ Ksh 200</option>
+                  <option value="stuffed">Stuffed @ Ksh 150</option>
+                  <option value="gluten">Gluten-free @ Ksh 100</option>
+                </select><br>
+              <label for="flavor">Select Topping</label><br>
+                <select class="form-select" aria-label="Default select example" id="toppings">
+            <!-- <option>Please select toppings</option> -->
+                  <option value="toppings">Tomato @ Ksh 70</option>
+                  <option value="toppings">Mushroom @ Ksh 70</option>
+                  <option value="toppings">Bacon @ Ksh 70</option>
+                  <option value="toppings">Sausage @ Ksh 70</option>
+                </select><br>
+            </form>
+          </div>
+        </div>
+   </div>
   </div>
 </body>
 </html>
