@@ -1,6 +1,21 @@
-.navbar  {
-  background-color: rgba(223, 245, 99, 0.651);
+.navigation {
+  height: 30vh;
+  margin-bottom: 50px;
 }
-ul li a {
-  font-size: large;
+.navbar-collapse {
+  margin-left: 50%;
+}
+.displays {
+  width: 50%;
+}
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.intro {
+  text-align: center;
+}
+.display img {
+  height: 50vh;
 }
