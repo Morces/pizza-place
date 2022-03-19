@@ -64,7 +64,9 @@ h5.card-title {
 }
 #order-now {
   text-align: center;
+  color: white;
   margin-top: 20px;
+  width: 100%;
 }
 .col-sm-5 {
   width: 60%;
@@ -74,6 +76,9 @@ h5.card-title {
 label {
   color: white;
 }
-/* .order {
-  background-image: url(img/cookware.jpeg);
-} */
+#order-now {
+  background-image: url(../img/cookware.jpeg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
