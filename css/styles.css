@@ -19,10 +19,17 @@
 #about {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 30px;
+  height: 50vh;
+  
 }
 .intro {
   text-align: center;
+  height: 50vh;
+  align-items: center;
+  margin-top: 40px;
+  
 }
 .flip-card img {
   height: 45vh;
@@ -52,25 +59,33 @@
   height: 50%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  padding-bottom: 50px;
 }
 .flip-card-back {
   transform: rotateY(180deg);
+  padding-bottom: 50px;
 }
 h5.card-title {
   text-align: center;
 }
+#menu {
+  background-color: rgb(91, 92, 92);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .carousel-item {
   width: 100vw;
-  margin-left: 20%;
+  margin-left: 25%;
+  margin-bottom: 20px;
 }
 .controls-top {
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
+  color: white;
 }
 .col-md-4 {
   border-radius: 10px;
   width: 50%;
-  
 }
 .view table {
   color: white;
@@ -82,6 +97,12 @@ h5.card-title {
   color: white;
   margin-top: 20px;
   width: 100%;
+}
+.click {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: space-evenly;
 }
 .col-sm-5 {
   width: 60%;
@@ -97,11 +118,11 @@ label {
   background-position: center center;
   background-repeat: no-repeat;
 }
-.delivery, .selection {
+.delivery,
+.selection {
   width: 60%;
   margin: auto;
 }
-
 #contact {
   display: flex;
   flex-wrap: wrap;
@@ -110,7 +131,58 @@ label {
   color: white;
   margin-top: 30px;
 }
-#reachme, .address {
+textarea#talk {
+  width: 100%;
+  height: 25vh;
+}
+#reachme,
+.address {
   text-align: center;
   margin-top: 35px;
+}
+.copy {
+  text-align: center;
+}
+
+/* media queries */
+
+@media screen and (width: 640px) {
+  .navigation {
+    height: 50vh;
+  }
+  .flip-card {
+    display: none;
+  }
+  .intro {
+    width: 100%;
+    margin: auto;
+  }
+}
+@media screen and (width: 600px) {
+  .navigation {
+    height: 20vh;
+  }
+  .flip-card {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width: 665px){
+  .navigation {
+    height: 30vh;
+  }
+  .flip-card {
+    display: none;
+  }
+  .click {
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    justify-content: space-evenly;
+  }
+  textarea#talk {
+    width: 90%;
+    height: 25vh;
+  }
+  
 }
