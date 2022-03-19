@@ -1,6 +1,16 @@
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(245, 166, 209);
+  overflow-x: hidden;
+}
 .navigation {
   height: 30vh;
   margin-bottom: 50px;
+  margin-top: 30px;
+  padding-top: 0px;
+  align-items: center;
 }
 .navbar-collapse {
   margin-left: 40%;
@@ -9,7 +19,7 @@
 #about {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .intro {
   text-align: center;
@@ -62,6 +72,11 @@ h5.card-title {
   width: 50%;
   
 }
+.view table {
+  color: white;
+  width: 80%;
+  margin: auto;
+}
 #order-now {
   text-align: center;
   color: white;
@@ -81,4 +96,21 @@ label {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+.delivery, .selection {
+  width: 60%;
+  margin: auto;
+}
+
+#contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: rgb(91, 92, 92);
+  color: white;
+  margin-top: 30px;
+}
+#reachme, .address {
+  text-align: center;
+  margin-top: 35px;
 }
