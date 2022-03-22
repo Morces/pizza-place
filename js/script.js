@@ -1,11 +1,13 @@
-var pizzaPrice, toppingPrice, crustPrice;
+let pizzaPrice;
+let crustPrice;
+let toppingPrice; 
 let totalPrice = 0;
 
 function selectPizza (name, size, toppings, crust, totalPrice) {
   this.name = name;
   this.size = size;
-  this.toppings = toppings;
   this.crust = crust;
+  this.toppings = toppings;
   this.totalPrice = totalPrice;
   
 }
@@ -14,11 +16,16 @@ function selectPizza (name, size, toppings, crust, totalPrice) {
 
 $(document).ready(function() {
   $("button#continue").click(function(event) {
-    let pizzaFlavor = $("#flavor optiom:selected").val();
-    let pizzaSize = $("#size option:seleceted").val();
-    let pizzaToppings = $("#toppings:selected").val();
-    let pizzaCrust = $("#crust:selected").val();
-    
+    let pizzaFlavor = $("#flavor option:selected").val();
+    let pizzaSize = $("#size option:selected").val();
+    let pizzaCrust = $("#crust option:selected").val();
+    let pizzaToppings = [];
+    $.each($("input[name='toppings']:checked"), function() {
+      pizzaToppings.push($(this).val());
+    });
+    console.log(pizzaToppings.join(", "));
+
+
     switch(pizzaSize) {
       case "0":
         pizzaPrice = 0;
@@ -34,8 +41,8 @@ $(document).ready(function() {
       case "small":
          pizzaPrice = 450;
          console.log(pizzaPrice);
-      default:
-        console.log("error found");
+      // default:
+      //   console.log("error found");
     }
     switch(pizzaCrust) {
       case "0":
@@ -52,32 +59,12 @@ $(document).ready(function() {
       case "Gluten-free":
          crustPrice = 100;
          console.log(crustPrice);
-      default:
-        console.log("null price");
+      // default:
+      //   console.log("null price");
     }
-  
-    switch(pizzaToppings) {
-      case "0":
-        toppingPrice = 0;
-      break;
-      case "Tomato":
-        toppingPrice = 70;
-        console.log(toppingPrice);
-      break;
-      case "Sausage":
-         toppingPrice = 70;
-         console.log(toppingPrice);
-      break;
-      case "Mushroom":
-         toppingPrice = 70;
-         console.log(toppingPrice);
-      break;
-      case "Bacon":
-         toppingPrice = 70;
-         console.log(toppingPrice);
-      default:
-        console.log("null price");
-    }
+    let toppingsvalue = pizzaToppings.length*70;
+    console.log("toppings value " + toppingsvalue);
+    
   
       if ((pizzaSize == "0") && (pizzaCrust == "0")) {
         console.log("You have not selected anything");
@@ -90,24 +77,27 @@ $(document).ready(function() {
         $("div.selection").slideDown(900);
       }
   
-      totalPrice = pizzaPrice + crustPrice + toppingPrice;
+      totalPrice = pizzaPrice + crustPrice + toppingsvalue;
       console.log(totalPrice);
-      let total = 0;
-      total = total + totalPrice;
+      let checkTotal = 0;
+      checkTotal = checkTotal + totalPrice;
   
-      $("#pizzaflavor").html($("#flavor option:selected").val());
-      $("#pizzasize").html($("#size option:selected").val());
-      $("#pizzatoppings").html($("#toppings option:selected").val());
-      $("#pizzacrust").html($("#crust option:selected").val());
-      $("#totalling").html(totalPrice);
+      $("#thename").html($("#flavor option:selected").val());
+      $("#thesize").html($("#size option:selected").val());
+      $("#thecrust").html($("#crust option:selected").val());
+      $("#thetopping").html(pizzaToppings.join(", "));
+      $("#amount").html(totalPrice);
   
   // this is the button for adding pizza
   
     $("button#another").click(function() {
-      let pizzaFlavor = $("#flavor optiom:selected").val();
-      let pizzaSize = $("#size option:seleceted").val();
-      let pizzaToppings = $("#toppings:selected").val();
-      let pizzaCrust = $("#crust:selected").val();
+      let pizzaFlavor = $("#flavor option:selected").val();
+      let pizzaSize = $("#size option:selected").val();
+      let pizzaCrust = $("#crust option:selected").val();
+      $.each($("input[name='toppings']:checked"), function() {
+        pizzaToppings.push($(this).val());
+      });
+      console.log(pizzaToppings.join(", "));
       
       switch(pizzaSize) {
         case "0":
@@ -145,39 +135,21 @@ $(document).ready(function() {
         default:
           console.log("null price");
       }
-    
-      switch(pizzaToppings) {
-        case "0":
-          toppingPrice = 0;
-        break;
-        case "Tomato":
-          toppingPrice = 70;
-          console.log(toppingPrice);
-        break;
-        case "Sausage":
-           toppingPrice = 70;
-           console.log(toppingPrice);
-        break;
-        case "Mushroom":
-           toppingPrice = 70;
-           console.log(toppingPrice);
-        break;
-        case "Bacon":
-           toppingPrice = 70;
-           console.log(toppingPrice);
-        default:
-          console.log("null price");
-      }
-      totalPrice = pizzaPrice + crustPrice + toppingPrice;
+      let toppingsvalue = pizzaToppings.length*70;
+      console.log("toppings value" + toppingsvalue);
+      totalPrice = pizzaPrice + crustPrice + toppingsvalue;
       console.log(totalPrice);
-      total + total + totalPrice;
-      console.log(total);
+
+      
+      checkTotal = checkTotal + totalPrice;
+      console.log(checkTotal);
   
   // this is a constructor function
   
       var newOrder = new selectPizza(pizzaFlavor, pizzaSize, pizzaToppings, pizzaCrust, totalPrice);
-      $("#ordered").append('<tr><td id="thename">' + newOrder.name + '</td><td id="thesize">' + newOrder.size + '</td><td id"thecrust">' + newOrder.crust + '</td><td id="thetopping">' + newOrder.toppings + '</td><td id="amount">' + newOrder.totalPrice + '</td></tr>');
-      console.log(newOrder);
+      // console.log(newOrder.name);
+      $("#ordered").append('<tr><td id="thename">' + newOrder.name + '</td><td id="thesize">' + newOrder.size + '</td><td id="thecrust">' + newOrder.crust + '</td><td id="thetopping">' + newOrder.toppings + '</td><td id="amount">' + newOrder.totalPrice + '</td></tr>');
+      // console.log(newOrder);
   
     });
   
@@ -186,9 +158,9 @@ $(document).ready(function() {
       $("button#process").hide();
       $("button#another").hide();
       $("button#deliver").slideDown(900);
-      $("#deliveryfee").slideDown(900);
-      console.log("Pay Ksh." + total);
-      $("#itemno").append("This is your bill: Ksh." + total);
+      // $("#deliveryfee").slideDown(900);
+      console.log("Pay Ksh." + checkTotal);
+      $("#itemno").append("This is your bill: Ksh." + checkTotal);
     });
   
     // Delivery button
@@ -200,38 +172,37 @@ $(document).ready(function() {
       $("#deliveryfee").hide();
       $("button#deliver").hide();
       $("#itemno").hide();
-      let deliverycost = total + 200;
-      console.log("Please pay Ksh." + deliverycost + "on delivery");
-      $("#cost").append("This is the total amount you should pay" + deliverycost);
-    })
+      let deliveryCost = checkTotal + 200;
+      console.log("Please pay Ksh." + deliveryCost + " on delivery");
+      $("#cost").append("This is the total amount you should pay Kshs." + deliveryCost);
+    });
   
     // complete order button
-    $("#finalize").click(function(event) {
+    $("button#finalize").click(function(event) {
       event.preventDefault();
   
       $("itemno").hide();
-      $("#delivery").hide();
-      $("button#finalze").hide();
-      let deliverycost = total + 200;
-      console.log("Your final bill is: Ksh." + deliverycost);
+      $(".delivery").hide();
+      $("button#finalize").hide();
+      let deliverAmount = checkTotal + 200;
+      console.log("Your final bill is: Ksh." + deliverAmount);
       let customer = $("input#your-name").val();
       let phone = $("input#phone").val();
       let location = $("input#location").val();
   
       if ($("input#your-name").val() && $("input#phone").val() && $("input#location").val() !="") {
-        $("#message").append("Hello" + customer +", Your order has been received and will be delivered at" + location)
+        $("#message").append("Hello " + customer +", Your order has been received and will be delivered at " + location + " Pay Kshs." + deliverAmount)
         $("#cost").hide();
         $("#message").slideDown(1000);
       }
       else {
         alert("Please provide your delivery details");
-        $("#delivery").show();
+        $(".delivery").show();
         $("button#finalize").show();
       }
+     });
+     event.preventDefault();
     });
-    event.preventDefault();
-    });
-    // event.preventDefault();
   });
 
 

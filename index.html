@@ -159,27 +159,41 @@
                     <option value="Meat">Meat Pizza</option>
                     <option value="Cheese">Cheese Pizza</option>
                     </select><br>
-                <label for="flavor">Select Pizza Size</label><br>
+                <label for="size">Select Pizza Size</label><br>
                   <select class="form-select" aria-label="Default select example" id="size">
-                    <option>Please select size</option>
+                    <!-- <option>Please select size</option> -->
                     <option value="larger">Large @ Ksh 1100</option>
                     <option value="medium">Medium @ Ksh 850</option>
                     <option value="small">Small @ Ksh 450</option>
                   </select><br>
-                <label for="flavor">Select Crust</label><br>
+                <label for="crust">Select Crust</label><br>
                   <select class="form-select" aria-label="Default select example" id="crust">
-                    <option>Please select crust</option>
+                    <!-- <option>Please select crust</option> -->
                     <option value="crispy">Crispy @ Ksh 200</option>
                     <option value="stuffed">Stuffed @ Ksh 150</option>
                     <option value="gluten">Gluten-free @ Ksh 100</option>
                   </select><br>
-                <label for="flavor">Select Topping</label><br>
-                  <select class="form-select" aria-label="Default select example" id="toppings">
-                    <option value="toppings">Tomato @ Ksh 70</option>
-                    <option value="toppings">Mushroom @ Ksh 70</option>
-                    <option value="toppings">Bacon @ Ksh 70</option>
-                    <option value="toppings">Sausage @ Ksh 70</option>
-                  </select><br>
+                  <label for="toppings">Select Topping @ Kshs. 70 each</label>
+                  <br><br>
+                <div class="same">
+                  <div  class="custom-control custom-checkout custom-control-inline">
+                    <input class="custom-control-input" type="checkbox" value="Tomato" name="toppings" id="tomato">
+                    <label for="Tomato" class="custom-control-label">Tomato</label>
+                  </div>
+                  <div  class="custom-control custom-checkout custom-control-inline">
+                    <input class="custom-control-input" type="checkbox" value="Mushrooms" name="toppings" id="mushroom">
+                    <label for="Mushrooms" class="custom-control-label">Mushrooms</label>
+                  </div>
+                  <div  class="custom-control custom-checkout custom-control-inline">
+                    <input class="custom-control-input" type="checkbox" value="Bacon" name="toppings" id="bacon">
+                    <label for="Bacon" class="custom-control-label">Bacon</label>
+                  </div>
+                  <div  class="custom-control custom-checkout custom-control-inline">
+                    <input class="custom-control-input" type="checkbox" value="Sausage" name="toppings" id="sausage">
+                    <label for="Sausage" class="custom-control-label">Sausage</label>
+                  </div>
+                </div>
+                  <br>
                   <button type="submit" id="continue" class="btn bg-danger">CONTINUE</button><br>
                   <br><br>
               </form>
@@ -211,6 +225,7 @@
                 <p id="cost"></p>
                 <p id="deliveryfee">Cost for Delivery is Ksh. 200</p>
                 <p id="message"></p>
+                <br><br>
               </div>
               <div class="click">
                 <button class="btn bg-danger" id="another">Add another Pizza</button>
